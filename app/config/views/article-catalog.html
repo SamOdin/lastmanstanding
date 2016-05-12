@@ -1,0 +1,11 @@
+<div class="panel panel-default row" data-ng-controller="articlesCatalogCtrl">
+    <div class="col-xs-3">
+        <a data-ng-repeat="item in catalog" data-ng-click="selectCategory(item)"
+           class="btn btn-block btn-default btn-lg" data-ng-class="getCategoryClass(item)">{{item}}</a>
+    </div>
+
+    <div class="col-xs-8">
+        Products go here
+    </div>
+
+</div>

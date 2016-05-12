@@ -1,0 +1,28 @@
+<div data-ng-controller="articlesCtrl">
+<div class="jumbotron">
+
+    <div class="container">
+        <h1>Search for articles!</h1>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">@</span>
+            <input type="text" data-ng-model="search" placeholder="Search for..." class="form-control" aria-describedby="sizing-addon1">
+        </div>
+    </div>
+    </div>
+
+
+    <div class="well" data-ng-repeat="a in articles | searchFor:search|limitTo: 5" data-ng-show="search">
+    <div class="row-fluid">
+        <div class="span4">
+            <h2>{{a.title}}</h2>
+            <p><img class="searchImage" ng-src="{{a.image}}" /></p>
+            <p>{{a.text | limitTo: 100}} {{a.text.length > 100 ? '...' : ''}}</p>
+            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+    </div>
+    </div>
+
+
+</div>
+</div>
+<br>

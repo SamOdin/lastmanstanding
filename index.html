@@ -1,0 +1,46 @@
+<html data-ng-app="main">
+    <head>
+        <meta charset="utf-8">
+        <base href="/">
+        <title>News site - test project</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+            .jumbotron {
+                height: 200px;
+                width: 100%;
+            }
+            .col-xs-3 {
+                width: 200px;
+            }
+            .col-xs-8 {
+                width: calc(100% - 200px);
+            }
+            .searchImage {
+                height: 30px;
+                width: 30px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div data-ng-include="'/app/config/views/header.html'"></div>
+
+        <li><a ui-sref="main-catalog">Route 1</a></li>
+        <li><a ui-sref="section-catalog">Route 2</a></li>
+        <li><a ui-sref="article-catalog">Route 2</a></li>
+
+        <div data-ui-view></div>
+        <div data-ng-include="'/app/config/views/footage.html'"></div>
+
+        <script src="/app/vendors/angular/angular.min.js"></script>
+        <script src="/app/vendors/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/app/vendors/angular-resource/angular-resource.min.js"></script>
+        <script src="/app/core.js"></script>
+        <script src="/app/config/controllers/controllers.js"></script>
+        <script src="/app/config/routes.js"></script>
+        <script src="/app/config/services/contentProvider.js"></script>
+    </body>
+</html>
