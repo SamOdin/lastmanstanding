@@ -7,6 +7,14 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
+
+            /*.state('index', {
+                abstract: true,
+                data: {isPublic: true},
+                controller: 'mainCtrl',
+                templateUrl: "/app/config/views/layout.html"
+            })*/
+
             .state('main-catalog', {
                 url: "/",
                 templateUrl: "/app/config/views/main-catalog.html"
