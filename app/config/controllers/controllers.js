@@ -11,11 +11,11 @@
 
                 articleProvider.getArticles().$promise.then(function (res) {
                     $rootScope.articles = res;
-                })
+                });
 
                 catalogProvider.getCatalog().$promise.then(function (res) {
                     $rootScope.catalog = res;
-                })
+                });
             }
 
             function articlesCatalogCtrl($scope, activeCategory) {
