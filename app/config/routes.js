@@ -17,7 +17,8 @@
 
             .state('main-catalog', {
                 url: "/",
-                templateUrl: "/app/config/views/main-catalog.html"
+                templateUrl: "/app/config/views/main-catalog.html",
+                resolve: resolveModule('articleProvider', 'catalogProvider', 'articlesCtrl')
             })
 
             .state('section-catalog', {
@@ -31,5 +32,13 @@
             })
             
     })
+    
+        function resolveModule(moduleName) {
+            return {
+                loadModules: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load(moduleName);
+                }]
+            }
+        }
 
 })();
