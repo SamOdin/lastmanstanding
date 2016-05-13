@@ -2,7 +2,9 @@
 
     angular
         .module('main')
+        .constant('activeCategory', "btn-primary")
         .controller('articlesCatalogCtrl', articlesCatalogCtrl)
+        .controller('randomArticlesCtrl', ['$rootScope', '$scope', randomArticlesCtrl])
         .controller('articlesCtrl', ['$rootScope', 'articleProvider', 'catalogProvider', articlesCtrl])
 
             function articlesCtrl($rootScope, articleProvider, catalogProvider) {
@@ -14,12 +16,9 @@
                 catalogProvider.getCatalog().$promise.then(function (res) {
                     $rootScope.catalog = res;
                 })
-
-                
-
             }
 
-            function articlesCatalogCtrl($scope) {
+            function articlesCatalogCtrl($scope, activeCategory) {
 
                 var selectedCategory = null;
 
@@ -28,9 +27,12 @@
                 };
 
                 $scope.getCategoryClass = function (category) {
-                    return selectedCategory == category ? "btn-primary" : "";
+                    return selectedCategory == category ? activeCategory : "";
                 };
-
+            }
+    
+            function randomArticlesCtrl($rootScope, $scope) {
+ 
             }
 
 })();
